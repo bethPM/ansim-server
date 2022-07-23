@@ -8,7 +8,7 @@ const port: string | number = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const whiteList = ["http://localhost:3000"];
+const whiteList = ["http://localhost:3000", "https://62dbd7d951a2e002241b7f4b--bespoke-arithmetic-bda4b8.netlify.app/"];
 
 const corsOptions = {
   origin: function (origin: any, callback: any) {

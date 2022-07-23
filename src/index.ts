@@ -3,7 +3,7 @@ import cors from "cors";
 import { loadAnsims } from "./API";
 import { ILatlng } from "./API/interface/index.interface";
 const app: express.Application = express();
-const port = 5000;
+const port: string | number = process.env.PORT | 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -46,6 +46,6 @@ app.get("/getAnsims", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(typeof port === "string" ? parseInt(port) : port , () => {
   console.log(`Example app listening on port ${port}`);
 });
